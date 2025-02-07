@@ -8,13 +8,17 @@ type ISliderInitialValue = {
 type ISliderCircleColor = {
   circleColor?: string;
 };
+type ISliderChange = {
+  onChange?: (value: number) => void;
+};
 /*
  * Тип пропсов slider
  * */
-type ISliderProps = React.HTMLAttributes<HTMLDivElement> &
+type ISliderProps = Omit<React.HTMLAttributes<HTMLDivElement>, "onChange"> &
   ISliderGradient &
   ISliderInitialValue &
-  ISliderCircleColor;
+  ISliderCircleColor &
+  ISliderChange;
 
 /*
  * Тип компонента slider

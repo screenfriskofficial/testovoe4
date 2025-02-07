@@ -1,6 +1,7 @@
 import React, { MouseEvent as ReactMouseEvent } from "react";
-import { ISliderComponent, ISliderProps } from "./interfaces.ts";
 import clsx from "clsx";
+import { ISliderComponent, ISliderProps } from "./interfaces.ts";
+import { mergeRefs } from "../../lib/mergeRefs.ts";
 
 const SliderComponent: ISliderComponent = React.forwardRef<
   HTMLDivElement,
@@ -11,12 +12,12 @@ const SliderComponent: ISliderComponent = React.forwardRef<
     gradient,
     circleColor,
     initialValue = 0,
-    onChange, // тип: (value: number) => void
+    onChange,
     ...rest
   } = props;
 
   const handleSize = 20; // 28px + 2*6px
-  const handleRadius = handleSize / 2; // 20px
+  const handleRadius = handleSize / 2;
 
   const sliderRef = React.useRef<HTMLDivElement>(null);
   const [value, setValue] = React.useState<number>(initialValue);
@@ -78,16 +79,6 @@ const SliderComponent: ISliderComponent = React.forwardRef<
     [],
   );
 
-  const setRefs = (node: HTMLDivElement | null) => {
-    sliderRef.current = node;
-    if (!ref) return;
-    if (typeof ref === "function") {
-      ref(node);
-    } else {
-      (ref as React.MutableRefObject<HTMLDivElement | null>).current = node;
-    }
-  };
-
   const backgroundGradient =
     gradient || "linear-gradient(to right, #f00, #00f)";
 
@@ -99,7 +90,7 @@ const SliderComponent: ISliderComponent = React.forwardRef<
 
   return (
     <div
-      ref={setRefs}
+      ref={mergeRefs(sliderRef, ref)}
       {...rest}
       className={clsx("relative w-full h-[16px] rounded-[8px]", className)}
       style={{ background: backgroundGradient }}
