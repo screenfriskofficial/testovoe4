@@ -1,1 +1,1 @@
-export { Columns, Badges, Statistic, Title } from "./ui";
+export { Title, Badges, Columns, Statistic } from "./ui";

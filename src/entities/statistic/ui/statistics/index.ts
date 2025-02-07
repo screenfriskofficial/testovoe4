@@ -1,1 +1,1 @@
-export { Statistic } from "./statistic.tsx";
+export { Statistic } from "./statistic";

@@ -4,7 +4,7 @@ import { Footer, Header, Sidebar } from "../../../../widgets";
 
 const Main = () => {
   return (
-    <article className="w-screen h-screen flex flex-col items-center bg-[#F6F5FA]">
+    <article className="w-screen flex flex-col items-center bg-[#F6F5FA]">
       <section className={"w-[1600px] flex flex-col items-center"}>
         <Header
           style={{
@@ -22,7 +22,7 @@ const Main = () => {
           <Outlet />
         </section>
 
-        <Footer style={{ width: 1600, height: 153, marginTop: 23 }} />
+        <Footer style={{ width: 1600, height: 153 }} />
       </section>
     </article>
   );

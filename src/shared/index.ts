@@ -1,7 +1,7 @@
 /*
- * Для показывания лоадера при загрузки страницы
+ * либы
  * */
-export { SuspenseLoading } from "./lib";
+export { SuspenseLoading, formatNumbers } from "./lib";
 /*
  * Константы роутов
  * */

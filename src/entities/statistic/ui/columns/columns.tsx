@@ -1,4 +1,4 @@
-import { colData } from "../../../../shared/mocks/statisticsMock.ts";
+import { colData } from "../../model/api/statisticsMock.ts";
 import { Column } from "../../../../shared";
 
 const Columns = () => {

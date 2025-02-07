@@ -1,6 +1,6 @@
 import { Badge, Typography } from "../../../../shared";
 import clsx from "clsx";
-import { badges } from "../../../../shared/mocks";
+import { badges } from "../../model/api/statisticsMock.ts";
 
 const Badges = () => {
   return (
