@@ -1,5 +1,6 @@
 import React from "react";
 import { IButtonComponent, IButtonProps } from "./interfaces.ts";
+import clsx from "clsx";
 /*
  * Компонент кнопки
  * */
@@ -7,9 +8,13 @@ const ButtonComponent: IButtonComponent = React.forwardRef<
   HTMLButtonElement,
   IButtonProps
 >((props, ref) => {
-  const { children, ...rest } = props;
+  const { children, className, ...rest } = props;
   return (
-    <button ref={ref} {...rest}>
+    <button
+      className={clsx(className, "border p-y-[13px] p-x-[24px]")}
+      ref={ref}
+      {...rest}
+    >
       {children}
     </button>
   );

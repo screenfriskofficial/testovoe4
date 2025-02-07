@@ -1,15 +1,16 @@
 import React from "react";
 import { ISurfaceComponent, ISurfaceProps } from "./interfaces.ts";
+import clsx from "clsx";
 /*
  * Компонент surface
  * */
 const SurfaceComponent: ISurfaceComponent = React.forwardRef<
-  HTMLButtonElement,
+  HTMLDivElement,
   ISurfaceProps
 >((props, ref) => {
-  const { children, ...rest } = props;
+  const { children, className, ...rest } = props;
   return (
-    <div ref={ref} {...rest}>
+    <div className={clsx(className, "bg-white")} ref={ref} {...rest}>
       {children}
     </div>
   );
