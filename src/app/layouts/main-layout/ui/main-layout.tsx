@@ -5,13 +5,14 @@ import { Footer, Header, Sidebar } from "../../../../widgets";
 const Main = () => {
   return (
     <article>
-      <Header />
+      <Header style={{ width: 1600, height: 89 }} />
+
       <section className="flex">
         <Sidebar style={{ width: 300, height: 600 }} />
         <Outlet />
       </section>
 
-      <Footer />
+      <Footer style={{ width: 1600, height: 153 }} />
     </article>
   );
 };
