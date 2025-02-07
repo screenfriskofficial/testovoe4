@@ -10,7 +10,11 @@ const SurfaceComponent: ISurfaceComponent = React.forwardRef<
 >((props, ref) => {
   const { children, className, ...rest } = props;
   return (
-    <div className={clsx(className, "bg-white")} ref={ref} {...rest}>
+    <div
+      className={clsx(className, "bg-white p-8 rounded-[8px]")}
+      ref={ref}
+      {...rest}
+    >
       {children}
     </div>
   );

@@ -11,7 +11,7 @@ const TypographyComponent: ITypographyComponent = React.forwardRef<
   const { children, className, ...rest } = props;
   return (
     <h3
-      className={clsx(className, "font-semibold text-2xl leading-[33.6]px")}
+      className={clsx(className, "font-semibold text-2xl")}
       ref={ref}
       {...rest}
     >
