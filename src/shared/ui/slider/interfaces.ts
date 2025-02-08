@@ -12,7 +12,7 @@ type ISliderChange = {
   onChange?: (value: number) => void;
 };
 /*
- * Тип пропсов slider
+ * Тип пропсов slider-section
  * */
 type ISliderProps = Omit<React.HTMLAttributes<HTMLDivElement>, "onChange"> &
   ISliderGradient &
@@ -21,7 +21,7 @@ type ISliderProps = Omit<React.HTMLAttributes<HTMLDivElement>, "onChange"> &
   ISliderChange;
 
 /*
- * Тип компонента slider
+ * Тип компонента slider-section
  * */
 type ISliderComponent = React.ForwardRefExoticComponent<
   React.PropsWithoutRef<ISliderProps> & React.RefAttributes<HTMLDivElement>

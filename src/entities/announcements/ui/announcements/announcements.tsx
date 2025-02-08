@@ -17,7 +17,7 @@ const Announcements = () => {
       <Typography>Обьявления</Typography>
       <List>
         {annMock.map((item) => (
-          <ListItem>
+          <ListItem key={item.title}>
             {item?.withDots ? (
               <div className="flex gap-2 items-center text-[#636570] text-[14px] font-normal">
                 <div

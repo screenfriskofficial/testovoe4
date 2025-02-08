@@ -1,4 +1,6 @@
-const CaretRight = () => {
+import React from "react";
+
+const CaretRight = React.memo(() => {
   return (
     <svg
       width="16"
@@ -13,6 +15,6 @@ const CaretRight = () => {
       />
     </svg>
   );
-};
+});
 
 export { CaretRight };

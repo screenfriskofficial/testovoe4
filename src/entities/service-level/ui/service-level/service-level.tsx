@@ -1,13 +1,15 @@
 import { Surface, Typography } from "../../../../shared";
-import { Slider } from "../../../../shared/ui";
 import React from "react";
 import { QuestionMark } from "../../../promotion-activity/model/icons/QuestionMark.tsx";
+import { SliderSection } from "../slider-section";
+import { Subtitle } from "../subtitle";
+import { Description } from "../description";
 
-const ServiceLevel = () => {
+const ServiceLevel = React.memo(() => {
   const [value, setValue] = React.useState(100);
-  const handleChange = (val: number): void => {
+  const handleChange = React.useCallback((val: number): void => {
     setValue(Math.round(val));
-  };
+  }, []);
   return (
     <Surface
       style={{
@@ -23,28 +25,11 @@ const ServiceLevel = () => {
         <QuestionMark />
       </div>
       <Typography>Уровень сервиса</Typography>
-      <Typography>
-        {value}% <span className="text-[12px] text-[#636570]">За 30 дней</span>
-      </Typography>
-      <section className="flex gap-2">
-        <div
-          className={"relative w-[120px] h-[16px] rounded-[8px] bg-[#DCDDE5]"}
-        />
-        <Slider
-          gradient={"linear-gradient(to right, #BFBF00, #7DBF00)"}
-          circleColor={"#74B200"}
-          onChange={handleChange}
-          initialValue={value}
-        />
-      </section>
-      <section>
-        <h5 className="font-semibold">У вас высокий уровень</h5>
-        <div className="text-[13px] text-[#636570]">
-          Спасибо, что следуете правилам, — за это положены преимущества
-        </div>
-      </section>
+      <Subtitle value={value} />
+      <SliderSection value={value} handleChange={handleChange} />
+      <Description />
     </Surface>
   );
-};
+});
 
 export { ServiceLevel };

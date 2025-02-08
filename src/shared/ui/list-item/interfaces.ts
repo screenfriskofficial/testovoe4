@@ -1,12 +1,12 @@
 import React from "react";
 /*
- * Тип пропса title
+ * Тип пропса subtitle
  * */
 type IListItemsCount = {
   count: number;
 };
 /*
- * Тип пропса title
+ * Тип пропса subtitle
  * */
 type IListItemsTitle = {
   title: string;

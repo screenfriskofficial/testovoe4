@@ -16,7 +16,7 @@ const OrderIncome = () => {
       <Typography>Доходы от заказов</Typography>
       <List>
         {orderData.map((item) => (
-          <ListItem>
+          <ListItem key={item.title}>
             <div className="text-[#636570] text-[14px] font-normal">
               {item.title}
             </div>
